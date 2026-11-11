@@ -1,7 +1,8 @@
 {
   "name": "ghost-label",
   "productName": "Ghost Label",
-  "version": "0.1.0",
+  "desktopName": "ghost-label",
+  "version": "0.1.1",
   "description": "Cross-platform desktop music app: AI-written artists and albums, recorded locally by a music model.",
   "main": "dist/main/main.js",
   "author": "Siddharth Dalal",
@@ -102,7 +103,8 @@
         "AppImage"
       ],
       "category": "Audio",
-      "icon": "resources/icon.png"
+      "icon": "resources/icon.png",
+      "syncDesktopName": true
     },
     "mac": {
       "target": [
@@ -110,7 +112,17 @@
       ],
       "category": "public.app-category.music",
       "icon": "resources/icon.png"
-    }
+    },
+    "extraFiles": [
+      {
+        "from": "../LICENSE",
+        "to": "LICENSE"
+      },
+      {
+        "from": "../NOTICE",
+        "to": "NOTICE"
+      }
+    ]
   },
   "allowScripts": {
     "electron@39.8.10": true,

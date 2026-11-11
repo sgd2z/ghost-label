@@ -15,7 +15,7 @@ tried on real gfx1151 hardware yet; see the last section.
 
 ## 1. Install the app
 
-1. Unzip `Ghost Label-0.1.0-win.zip` to a folder you own, for example
+1. Unzip `Ghost Label-0.1.1-win.zip` to a folder you own, for example
    `C:\Apps\GhostLabel`. The zip is the recommended download.
 2. Run `Ghost Label.exe`. The build is unsigned, so SmartScreen may warn: click
    **More info → Run anyway**.
@@ -112,13 +112,13 @@ uninstall, delete the app folder and both of those folders.
 
 ## Upgrading from earlier private builds (0.2.x / Standard Music Desktop)
 
-0.1.0 shares `%APPDATA%\GhostLabel` with the earlier private 0.2.1 and 0.2.2 builds, so settings
+0.1.1 shares `%APPDATA%\GhostLabel` with the earlier private 0.2.1 and 0.2.2 builds, so settings
 and any model weights already in `%APPDATA%\GhostLabel\Engine\ACE-Step-1.5\checkpoints`
 (finished or partly downloaded) are reused. 0.2.0 kept its data in `%APPDATA%\StandardMusicDesktop`.
-On first start, 0.1.0 copies your settings (AI provider, models, preferences) and edited rules
+On first start, 0.1.1 copies your settings (AI provider, models, preferences) and edited rules
 from there into `%APPDATA%\GhostLabel`; API keys saved in Windows Credential Manager under the
 old name are still found. The library and the engine are not copied. Install the engine again
-from Settings › Music engine. Once 0.1.0 works, you can delete `%APPDATA%\StandardMusicDesktop`
+from Settings › Music engine. Once 0.1.1 works, you can delete `%APPDATA%\StandardMusicDesktop`
 and `%APPDATA%\Standard Music Desktop`.
 
 Settings › AI provider says where it saved ("Saved to …\settings.json · key in WinVaultKeyring").

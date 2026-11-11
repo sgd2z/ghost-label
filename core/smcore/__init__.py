@@ -5,4 +5,4 @@ the library database, library building, taste, links analysis, the studio queue 
 engine process (../engine), sharing and export. Stdlib only; `keyring` and `yt_dlp` are optional.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"

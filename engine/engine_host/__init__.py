@@ -6,4 +6,4 @@ samples; the host does everything else: protocol, progress, cancellation, trimmi
 loudness and AAC/.m4a encoding.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
