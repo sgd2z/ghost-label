@@ -1,11 +1,11 @@
 {
   "name": "ghost-label",
   "productName": "Ghost Label",
-  "version": "0.2.2",
+  "version": "0.1.0",
   "description": "Cross-platform desktop music app: AI-written artists and albums, recorded locally by a music model.",
   "main": "dist/main/main.js",
   "author": "Siddharth Dalal",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "build": "node build.mjs",

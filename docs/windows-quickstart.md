@@ -15,9 +15,8 @@ tried on real gfx1151 hardware yet; see the last section.
 
 ## 1. Install the app
 
-1. Unzip `Ghost Label-0.2.2-win.zip` to a folder you own, for example
-   `C:\Apps\GhostLabel`. (Or use `Ghost Label 0.2.2.exe`, the portable single
-   file. It unpacks itself on every launch, so it starts slower.)
+1. Unzip `Ghost Label-0.1.0-win.zip` to a folder you own, for example
+   `C:\Apps\GhostLabel`. The zip is the recommended download.
 2. Run `Ghost Label.exe`. The build is unsigned, so SmartScreen may warn: click
    **More info → Run anyway**.
 3. First launch takes about a minute. The bundled `uv` downloads Python 3.12 and creates the app's
@@ -111,16 +110,16 @@ Afterwards, put its `venv\Scripts\python.exe` into Settings › Music engine ›
 The Electron shell's own log is in `%APPDATA%\Ghost Label\logs\main.log`. To
 uninstall, delete the app folder and both of those folders.
 
-## Upgrading from 0.2.0 (Standard Music Desktop)
+## Upgrading from earlier private builds (0.2.x / Standard Music Desktop)
 
-0.2.1 and 0.2.2 share `%APPDATA%\GhostLabel`, so settings and any model weights already in
-`%APPDATA%\GhostLabel\Engine\ACE-Step-1.5\checkpoints` (finished or partly downloaded) are reused.
-0.2.0 kept its data in `%APPDATA%\StandardMusicDesktop`. On first start, 0.2.2 copies your
-settings (AI provider, models, preferences) and edited rules from there into
-`%APPDATA%\GhostLabel`; API keys saved in Windows Credential Manager under the old name are still
-found. The library and the engine are not copied. Install the engine again from Settings ›
-Music engine. Once 0.2.2 works, you can delete `%APPDATA%\StandardMusicDesktop` and
-`%APPDATA%\Standard Music Desktop`.
+0.1.0 shares `%APPDATA%\GhostLabel` with the earlier private 0.2.1 and 0.2.2 builds, so settings
+and any model weights already in `%APPDATA%\GhostLabel\Engine\ACE-Step-1.5\checkpoints`
+(finished or partly downloaded) are reused. 0.2.0 kept its data in `%APPDATA%\StandardMusicDesktop`.
+On first start, 0.1.0 copies your settings (AI provider, models, preferences) and edited rules
+from there into `%APPDATA%\GhostLabel`; API keys saved in Windows Credential Manager under the
+old name are still found. The library and the engine are not copied. Install the engine again
+from Settings › Music engine. Once 0.1.0 works, you can delete `%APPDATA%\StandardMusicDesktop`
+and `%APPDATA%\Standard Music Desktop`.
 
 Settings › AI provider says where it saved ("Saved to …\settings.json · key in WinVaultKeyring").
 If Windows Credential Manager can't be used, the key goes to `secrets.json` in the data folder, and
