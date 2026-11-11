@@ -1,0 +1,13 @@
+{
+  "backend": "acestep",
+  "env": {
+    "ACESTEP_PROJECT_ROOT": "C:/Users/you/music-engine/ACE-Step-1.5",
+    "ACESTEP_CHECKPOINTS_DIR": "C:/Users/you/music-engine/checkpoints",
+    "ACESTEP_ROCM_DTYPE": "float32"
+  },
+  "options": {
+    "config_path": "acestep-v15-turbo",
+    "lm_model_path": "acestep-5Hz-lm-1.7B",
+    "duration": "auto"
+  }
+}

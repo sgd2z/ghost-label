@@ -1,0 +1,120 @@
+{
+  "name": "ghost-label",
+  "productName": "Ghost Label",
+  "version": "0.2.2",
+  "description": "Cross-platform desktop music app: AI-written artists and albums, recorded locally by a music model.",
+  "main": "dist/main/main.js",
+  "author": "Siddharth Dalal",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "npm run build && electron .",
+    "typecheck": "tsc --noEmit -p .",
+    "dist:win": "npm run build && node scripts/fetch-uv.mjs win && electron-builder --win zip --x64",
+    "dist:win-portable": "npm run build && node scripts/fetch-uv.mjs win && electron-builder --win portable --x64",
+    "dist:linux": "npm run build && node scripts/fetch-uv.mjs linux && electron-builder --linux AppImage",
+    "dist:mac": "npm run build && node scripts/fetch-uv.mjs mac && electron-builder --mac zip"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.6.0"
+  },
+  "build": {
+    "appId": "com.sgd2z.ghostlabel",
+    "productName": "Ghost Label",
+    "directories": {
+      "output": "out"
+    },
+    "files": [
+      "dist/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/renderer",
+        "to": "payload/ui",
+        "filter": [
+          "**/*",
+          "!*.map"
+        ]
+      },
+      {
+        "from": "../core/smcore",
+        "to": "payload/core/smcore",
+        "filter": [
+          "**/*",
+          "!**/__pycache__/**"
+        ]
+      },
+      {
+        "from": "../core/requirements.txt",
+        "to": "payload/core/requirements.txt"
+      },
+      {
+        "from": "../engine",
+        "to": "payload/engine",
+        "filter": [
+          "engine.py",
+          "driver.py",
+          "requirements.txt",
+          "engine.example.json",
+          "engine_host/**",
+          "docs/**",
+          "scripts/**",
+          "README.md",
+          "!**/__pycache__/**"
+        ]
+      },
+      {
+        "from": "resources/bin",
+        "to": "payload/bin",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "../docs",
+        "to": "payload/docs",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "fileAssociations": [
+      {
+        "ext": "glalbum",
+        "name": "Ghost Label album",
+        "role": "Viewer"
+      }
+    ],
+    "win": {
+      "target": [
+        "zip",
+        "portable"
+      ],
+      "icon": "resources/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Audio",
+      "icon": "resources/icon.png"
+    },
+    "mac": {
+      "target": [
+        "zip"
+      ],
+      "category": "public.app-category.music",
+      "icon": "resources/icon.png"
+    }
+  },
+  "allowScripts": {
+    "electron@39.8.10": true,
+    "electron-winstaller@5.4.0": true,
+    "esbuild@0.25.12": true
+  }
+}

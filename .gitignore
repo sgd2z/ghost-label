@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+out/
+engine.json
+*.m4a
+.venv/
+venv/
+node_modules/
+app/dist/
+app/out/
+dist/
+*.partial
+app/resources/bin/

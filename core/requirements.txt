@@ -1,0 +1,4 @@
+# The core runs on the standard library alone. The app installs these at every start when they
+# are missing (app/src/main/main.ts ensureExtras); without them it still works:
+keyring        # OS keyring for API keys (Windows Credential Manager, macOS Keychain, Secret Service)
+certifi        # CA bundle for HTTPS on systems with an outdated store

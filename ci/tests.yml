@@ -1,0 +1,27 @@
+# Copy to .github/workflows/tests.yml to enable (the box token lacks the GitHub `workflow` scope).
+# Runs the test suite on Windows, Linux and macOS. Manual only (Actions tab › tests › Run workflow),
+# so it never spends Actions minutes unless you ask it to.
+name: tests
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r engine/requirements.txt
+      - name: ffmpeg (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: ffmpeg (Windows)
+        if: runner.os == 'Windows'
+        run: choco install ffmpeg -y --no-progress
+      # macOS deliberately has no ffmpeg, to exercise the afconvert fallback.
+      - run: python -m unittest discover -s engine/tests -v

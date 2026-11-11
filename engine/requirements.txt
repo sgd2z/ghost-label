@@ -1,0 +1,4 @@
+# The engine host itself. Each backend brings its own model dependencies (see docs/backends/).
+# ACE-Step's requirements already include both of these.
+numpy
+soundfile
